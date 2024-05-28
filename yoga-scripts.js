@@ -276,6 +276,14 @@ function heroAnimation() {
     path: lottiePath,
   });
 
+  bodymovin.loadAnimation({
+  container: document.getElementById("lottie-bubble-wrap-m"),
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: lottiePath,
+});
+
   loopAnimation = gsap.to(
     { frame: 0 },
     {
