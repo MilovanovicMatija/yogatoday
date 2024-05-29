@@ -279,8 +279,8 @@ function heroAnimation() {
 let animationM = bodymovin.loadAnimation({
   container: document.getElementById("lottie-bubble-wrap-m"),
   renderer: "svg",
-  loop: false,
-  autoplay: false,
+  loop: true,
+  autoplay: true,
   path: lottiePath,
 });
 
