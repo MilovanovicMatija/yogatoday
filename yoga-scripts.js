@@ -52,6 +52,8 @@ let followWidgetBubble = document.querySelector(".blog-to-follow-shape");
 
 let overlayTransitions = document.querySelector(".overlay-bg");
 
+console.log("I'm in");
+
 const sections = document.querySelectorAll(".home-page .main-wrapper > section");
 const totalSections = sections.length;
 
