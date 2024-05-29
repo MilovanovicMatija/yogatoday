@@ -356,7 +356,6 @@ function instructorsBubblePosition() {
   //   var secondBubbleElement = document.querySelectorAll(".instructors .w-slide:not([aria-hidden='true'])")[0];
   //   var bubbleFromClasses = secondBubbleElement.querySelector("svg");
   // }
-
   const bubbleFromClasses = document.querySelector('locations-bubble-svg');
 
   let instructors = document.querySelector(".instructors");
