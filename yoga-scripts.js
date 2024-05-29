@@ -276,7 +276,7 @@ function heroAnimation() {
     path: lottiePath,
   });
 
-  bodymovin.loadAnimation({
+let animationM = bodymovin.loadAnimation({
   container: document.getElementById("lottie-bubble-wrap-m"),
   renderer: "svg",
   loop: false,
