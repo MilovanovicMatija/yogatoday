@@ -349,17 +349,15 @@ meetTheInstructorsBtn.addEventListener("click", function () {
 });
 
 function instructorsBubblePosition() {
-  if (window.innerWidth > 768) {
-    var secondBubbleElement = document.querySelectorAll(".instructors .w-slide:not([aria-hidden='true'])")[1];
-    var bubbleFromClasses = secondBubbleElement.querySelector(
-      '.locations-bubble-svg'
-    );
-  } else {
-    var secondBubbleElement = document.querySelectorAll(".instructors .w-slide:not([aria-hidden='true'])")[0];
-    var bubbleFromClasses = secondBubbleElement.querySelector(
-      'locations-bubble-svg'
-    );
-  }
+  // if (window.innerWidth > 768) {
+  //   var secondBubbleElement = document.querySelectorAll(".instructors .w-slide:not([aria-hidden='true'])")[1];
+  //   var bubbleFromClasses = secondBubbleElement.querySelector("svg");
+  // } else {
+  //   var secondBubbleElement = document.querySelectorAll(".instructors .w-slide:not([aria-hidden='true'])")[0];
+  //   var bubbleFromClasses = secondBubbleElement.querySelector("svg");
+  // }
+
+  const bubbleFromClasses = document.querySelector('locations-bubble-svg');
 
   let instructors = document.querySelector(".instructors");
   let bubbleRect = bubbleFromClasses.getBoundingClientRect();
