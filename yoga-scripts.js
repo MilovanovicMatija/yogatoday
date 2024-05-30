@@ -39,6 +39,7 @@ let footerHeading = document.querySelector('.footer-heading');
 let footerRow = document.querySelector('.footer-row');
 let footerBottom = document.querySelector('.footer-bottom');
 const pricing = document.querySelector('#pricing');
+const navbar = document.querySelector('.navbar');
 
 // Transitions
 let transitions = document.querySelector('.transitions');
@@ -73,7 +74,7 @@ let followWidgetBubble = document.querySelector('.blog-to-follow-shape');
 
 let overlayTransitions = document.querySelector('.overlay-bg');
 
-console.log("I'm in");
+console.log("I'm i");
 
 const sections = document.querySelectorAll(
   '.home-page .main-wrapper > section'
@@ -1399,6 +1400,9 @@ function followToFooter() {
     duration: 0.3,
   });
 
+  
+  gsap.set(navbar, { backgroundColor: 'rgb(249, 248, 240)' });
+
   gsap.set(footerSection, { top: 'calc(100vh + 30%)' });
   gsap.set([footerHeading, footerRow, footerBottom], { opacity: 0 });
 
@@ -1432,6 +1436,8 @@ function footerToFollow() {
     opacity: 0,
     duration: 0.3,
   });
+
+  gsap.set(navbar, { backgroundColor: 'rgba(0, 0, 0, 0)' });
 
   gsap.to(footerSection, {
     delay: 0.3,
