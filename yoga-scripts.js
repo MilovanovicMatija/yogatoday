@@ -1437,7 +1437,10 @@ function footerToFollow() {
     duration: 0.3,
   });
 
-  gsap.set(navbar, { backgroundColor: 'rgba(0, 0, 0, 0)' });
+  gsap.set(navbar, {
+    delay: 0.3,
+    backgroundColor: 'rgba(0, 0, 0, 0)',
+  });
 
   gsap.to(footerSection, {
     delay: 0.3,
