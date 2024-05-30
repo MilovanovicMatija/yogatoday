@@ -429,6 +429,7 @@ function instructorsBubblePosition() {
     var secondBubbleElement = document.querySelectorAll(
       ".instructors .w-slide:not([aria-hidden='true'])"
     )[1];
+    console.log(secondBubbleElement);
     var bubbleFromClasses = secondBubbleElement.querySelector('svg');
     console.log(bubbleFromClasses);
   } else {
