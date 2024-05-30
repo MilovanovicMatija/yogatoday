@@ -425,13 +425,11 @@ meetTheInstructorsBtn.addEventListener('click', function () {
 });
 
 function instructorsBubblePosition() {
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 992) {
     var secondBubbleElement = document.querySelectorAll(
       ".instructors .w-slide:not([aria-hidden='true'])"
     )[1];
-    console.log(secondBubbleElement);
     var bubbleFromClasses = secondBubbleElement.querySelector('svg');
-    console.log(bubbleFromClasses);
   } else {
     var secondBubbleElement = document.querySelectorAll(
       ".instructors .w-slide:not([aria-hidden='true'])"
@@ -464,7 +462,7 @@ function getCurrentBackground() {
     'url(' + currentSlideImageURL + ')';
 
   // Get current classes slide
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 992) {
     var secondVisibleElement = document.querySelectorAll(
       ".instructors .w-slide:not([aria-hidden='true'])"
     )[1];
@@ -807,7 +805,7 @@ function instructorsToClasses() {
 
   instructorsBubblePosition();
 
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 992) {
     var secondVisibleElement = document.querySelectorAll(
       ".instructors .w-slide:not([aria-hidden='true'])"
     )[1];
@@ -1401,7 +1399,6 @@ function followToFooter() {
     duration: 0.3,
   });
 
-  
   gsap.set(navbar, { backgroundColor: 'rgb(249, 248, 240)' });
 
   gsap.set(footerSection, { top: 'calc(100vh + 30%)' });
@@ -1439,7 +1436,7 @@ function footerToFollow() {
   });
 
   gsap.set(navbar, {
-    delay: 0.3,
+    delay: 1,
     backgroundColor: 'rgba(0, 0, 0, 0)',
   });
 
