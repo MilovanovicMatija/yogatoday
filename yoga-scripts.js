@@ -38,7 +38,6 @@ let footerContent = document.querySelector('.footer-content');
 let footerHeading = document.querySelector('.footer-heading');
 let footerRow = document.querySelector('.footer-row');
 let footerBottom = document.querySelector('.footer-bottom');
-const pricing = document.querySelector('#pricing');
 const navbar = document.querySelector('.navbar');
 
 // Transitions
@@ -1283,8 +1282,6 @@ function blogToFollow() {
     },
   });
 
-  gsap.to(pricing, { opacity: 1, duration: 0.3 });
-
   let followWidgetBubbleSVG = Snap(followWidgetBubble.querySelector('svg'));
   let blogToFollowPath = followWidgetBubbleSVG.select('path');
 
@@ -1458,8 +1455,6 @@ function footerToFollow() {
     },
   });
 
-  gsap.to(pricing, { opacity: 1, duration: 0.3 });
-
   const targetSection = document.querySelector(
     `.main-wrapper [scroll-index="7"]`
   );
@@ -1476,14 +1471,6 @@ function performScroll(direction) {
   if (window.innerWidth >= 768) {
     if (document.documentElement.classList.contains('w-editor') || isScrolling)
       return;
-
-    console.log(currentSectionIndex);
-
-    if (pricing.style.opacity === '1' && currentSectionIndex !== 6) {
-      gsap.to(pricing, { opacity: 0, duration: 0.3 });
-    } else if (pricing.style.opacity === '1' && currentSectionIndex === 6) {
-      gsap.to(pricing, { opacity: 1, duration: 0.3 });
-    }
 
     let newSectionIndex = direction
       ? currentSectionIndex - 1
@@ -1551,13 +1538,30 @@ function performScroll(direction) {
 
 const toggleButton = document.querySelector('.toggle-btn');
 
+const allSections = document.querySelectorAll('.main-wrapper [scroll-index]');
+
 document
   .querySelector('.nav-link.pricing-link')
   .addEventListener('click', function (e) {
     e.preventDefault();
     if (window.innerWidth < 768) toggleButton.click();
-    gsap.to(pricing, { opacity: 1, duration: 0.3 });
+    allSections.forEach((section) => {
+      section.classList.remove('active');
+    });
+    document.querySelector('.follow-us').classList.add('active');
+    currentSectionIndex = 7;
+
+    const targetSection = document.querySelector(
+      `.main-wrapper [scroll-index="7"]`
+    );
+    scrollingToSections(targetSection);
+    enableScroll();
+    resetStates();
   });
+
+function currentUrlContainsPricing() {
+  return window.location.hash === '#pricing';
+}
 
 window.addEventListener(
   'wheel',
