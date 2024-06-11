@@ -1566,7 +1566,10 @@ function currentUrlContainsPricing() {
 const homePage = navbar.closest('.home-page');
 
 if (!homePage) {
+  console.log('not home page');
   window.addEventListener('scroll', function () {
+    console.log('scrolling');
+    console.log(window.scrollY);
     if (window.scrollY > 50) {
       navbar.classList.remove('transparent');
       navbar.classList.add('solid');
